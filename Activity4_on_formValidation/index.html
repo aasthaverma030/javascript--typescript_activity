@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    <script type="text/javascript">
+    function chkpwd(){
+      var a = document.getElementById("psw").value;
+
+      if(a==""){
+        document.getElementById("message").innerHTML ="please fill the password";
+        return false;
+      }else if(a.length <8){
+        document.getElementById("message").innerHTML ="Password must be 8 character";
+        return false;
+      }else if(a.search((/[0-9]/) || a.search(/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/) || a.search(/[a-z]/) ==-1)){
+        document.getElementById("message").innerHTML ="Password must be combination of albhabet and no. and special character";
+        return false;
+      }else{
+      document.getElementById("message").innerHTML ="Succesful";
+      document.getElementById('message').style.color = "green";
+      return true;
+      }
+    }
+    
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <h2>Login Page</h2><br>    
+    <div class="login">    
+        <form onsubmit="return chkpwd()">
+            <div class="form-group">
+              <label>Enter the User Name</label>
+              <input type="text" class="form-control" id="uname"  placeholder="username ">
+              
+            </div>
+            <div class="form-group">
+              <label>Enter the Password</label>
+           <input type="password" class="form-control" id="psw" placeholder="Password"><br>
+           <span id ="message" style="color: red;"></span>
+              
+            </div>
+            <!-- <input type="submit" value="submit"> -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-danger" onClick="window.location.reload();">Cancel</button>
+           
+          </form>
+    
+</div>    
+    
+</body>
+</html>

@@ -1,0 +1,11 @@
+center{
+    border: 1px solid black; 
+    margin-left: 281px;
+    margin-right: 370px;
+    padding-bottom: 100px;
+    background-color: yellow;
+}
+.required:after {
+    content:" *";
+    color: red;
+}
